@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.newemptycomposeapp
+package vtsen.hashnode.dev.simplerestapidemo
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,13 +10,13 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import vtsen.hashnode.dev.newemptycomposeapp.ui.theme.NewEmptyComposeAppTheme
+import vtsen.hashnode.dev.simplerestapidemo.ui.theme.SimpleRestApiAppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            NewEmptyComposeAppTheme {
+            SimpleRestApiAppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -37,7 +37,7 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    NewEmptyComposeAppTheme(useSystemUIController = false) {
+    SimpleRestApiAppTheme(useSystemUIController = false) {
         Greeting("Android")
     }
 }

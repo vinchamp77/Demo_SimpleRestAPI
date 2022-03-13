@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "New Empty Compose App"
+rootProject.name = "Simple REST API App"
 include ':app'
