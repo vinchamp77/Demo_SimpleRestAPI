@@ -7,10 +7,10 @@ import androidx.activity.viewModels
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import vtsen.hashnode.dev.simplerestapidemo.ui.navigation.BuildNavGraph
 import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 import vtsen.hashnode.dev.simplerestapidemo.ui.theme.SimpleRestApiAppTheme
 
@@ -30,7 +30,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                    MainScreen(viewModel)
                 }
             }
         }
@@ -38,14 +38,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    SimpleRestApiAppTheme(useSystemUIController = false) {
-        Greeting("Android")
-    }
+private fun MainScreen(viewModel: MainViewModel) {
+    val navController = rememberNavController()
+    BuildNavGraph(navController, viewModel)
 }
