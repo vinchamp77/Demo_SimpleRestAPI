@@ -6,3 +6,9 @@ import kotlinx.serialization.Serializable
 data class KotlinSerdesMealCategoriesResponse (
     val categories: List<KotlinSerdesMealCategory>
 )
+
+fun KotlinSerdesMealCategoriesResponse.asMealCategories(): List<MealCategory> {
+    return categories.map {
+        it.asMealCategory()
+    }
+}

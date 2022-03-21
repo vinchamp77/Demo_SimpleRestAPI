@@ -10,3 +10,12 @@ class MoshiMealCategory(
     val strCategoryDescription: String,
     val strCategoryThumb: String
 )
+
+fun MoshiMealCategory.asMealCategory(): MealCategory {
+    return MealCategory (
+        id = idCategory,
+        name = strCategory,
+        description = strCategoryDescription,
+        imageUrl = strCategoryThumb,
+    )
+}

@@ -10,3 +10,12 @@ class KotlinSerdesMealCategory(
     val strCategoryDescription: String,
     val strCategoryThumb: String
 )
+
+fun KotlinSerdesMealCategory.asMealCategory(): MealCategory {
+    return MealCategory (
+        id = idCategory,
+        name = strCategory,
+        description = strCategoryDescription,
+        imageUrl = strCategoryThumb,
+    )
+}
