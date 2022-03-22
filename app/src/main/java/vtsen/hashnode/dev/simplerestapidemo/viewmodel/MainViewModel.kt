@@ -1,6 +1,5 @@
 package vtsen.hashnode.dev.simplerestapidemo.viewmodel
 
-import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -25,18 +24,18 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
         RetrofitGsonMealsWebService()
     )
 
-    init {
-        viewModelScope.launch {
-            val response = repository.getRetrofitMoshiMealCategories()
-            //val response = repository.getRetrofitKotlinSerdesMealCategories()
-            //val response = repository.getRetrofitGsonMealCategories()
-            //Log.d("ViewModelDebug", response.toString())
-
-            mealCategories = response.asMealCategories()
-        }
+    fun updateMealCategoriesWithRetrofitMoshi() = viewModelScope.launch {
+        val response = repository.getRetrofitMoshiMealCategories()
+        mealCategories = response.asMealCategories()
     }
 
-    fun init() {
+    fun updateMealCategoriesWithRetrofitKotlinSerdes() = viewModelScope.launch {
+        val response = repository.getRetrofitKotlinSerdesMealCategories()
+        mealCategories = response.asMealCategories()
+    }
 
+    fun updateMealCategoriesWithRetrofitGson() = viewModelScope.launch {
+        val response = repository.getRetrofitGsonMealCategories()
+        mealCategories = response.asMealCategories()
     }
 }
