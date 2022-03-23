@@ -22,20 +22,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            SimpleRestApiAppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    MainScreen(viewModel)
-                }
-            }
+            MainScreen(viewModel)
         }
     }
 }
 
 @Composable
 private fun MainScreen(viewModel: MainViewModel) {
-    val navController = rememberNavController()
-    BuildNavGraph(navController, viewModel)
+    SimpleRestApiAppTheme {
+        val navController = rememberNavController()
+        BuildNavGraph(navController, viewModel)
+    }
 }

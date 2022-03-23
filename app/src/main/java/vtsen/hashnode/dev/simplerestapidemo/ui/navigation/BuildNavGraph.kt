@@ -5,8 +5,8 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import vtsen.hashnode.dev.simplerestapidemo.ui.sreens.HomeScreen
-import vtsen.hashnode.dev.simplerestapidemo.ui.sreens.MealCategoriesScreen
+import vtsen.hashnode.dev.simplerestapidemo.ui.screens.HomeScreen
+import vtsen.hashnode.dev.simplerestapidemo.ui.screens.MealCategoriesScreen
 import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
 
 @Composable

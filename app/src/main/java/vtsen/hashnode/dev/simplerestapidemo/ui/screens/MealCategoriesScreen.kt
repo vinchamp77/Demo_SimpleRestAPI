@@ -1,4 +1,4 @@
-package vtsen.hashnode.dev.simplerestapidemo.ui.sreens
+package vtsen.hashnode.dev.simplerestapidemo.ui.screens
 
 import androidx.compose.runtime.Composable
 import vtsen.hashnode.dev.simplerestapidemo.viewmodel.MainViewModel
