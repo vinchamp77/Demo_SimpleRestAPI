@@ -2,7 +2,7 @@ package vtsen.hashnode.dev.simplerestapidemo.data
 
 import com.google.gson.annotations.SerializedName
 
-class GsonMealCategory(
+data class GsonMealCategory(
     @SerializedName("idCategory") val idCategory: String,
     val strCategory: String,
     val strCategoryDescription: String,

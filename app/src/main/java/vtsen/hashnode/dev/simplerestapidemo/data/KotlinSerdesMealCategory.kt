@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class KotlinSerdesMealCategory(
+data class KotlinSerdesMealCategory(
     @SerialName("idCategory")  val idCategory: String,
     val strCategory: String,
     val strCategoryDescription: String,
