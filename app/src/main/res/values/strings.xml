@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Simple REST API App</string>
+    <string name="retrofit_moshi">Retrofit + Moshi</string>
+    <string name="retrofit_gson">Retrofit + Gson</string>
+    <string name="retrofit_kotlin_serdes">Retrofit + Kotlin Serdes</string>
 </resources>
