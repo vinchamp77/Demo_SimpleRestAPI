@@ -5,14 +5,16 @@ import kotlinx.coroutines.withContext
 import vtsen.hashnode.dev.simplerestapidemo.data.GsonMealCategoriesResponse
 import vtsen.hashnode.dev.simplerestapidemo.data.KotlinSerdesMealCategoriesResponse
 import vtsen.hashnode.dev.simplerestapidemo.data.MoshiMealCategoriesResponse
+import vtsen.hashnode.dev.simplerestapidemo.repository.remote.ktorkotlinserdes.KtorKotlinSerdesMealsWebService
 import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitgson.RetrofitGsonMealsWebService
 import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitkotlinserdes.RetrofitKotlinSerdesMealsWebService
 import vtsen.hashnode.dev.simplerestapidemo.repository.remote.retrofitmoshi.RetrofitMoshiMealsWebService
 
 class MainRepository(
     private val retrofitMoshiWebService: RetrofitMoshiMealsWebService,
-    private val retrofitKotlinSerdesWebService: RetrofitKotlinSerdesMealsWebService,
     private val retrofitGsonWebService: RetrofitGsonMealsWebService,
+    private val retrofitKotlinSerdesWebService: RetrofitKotlinSerdesMealsWebService,
+    private val ktorKotlinSerdesWebService: KtorKotlinSerdesMealsWebService,
 ) {
 
     companion object {
@@ -24,14 +26,18 @@ class MainRepository(
         return@withContext retrofitMoshiWebService.getMealCategories()
     }
 
-    suspend fun getRetrofitKotlinSerdesMealCategories(): KotlinSerdesMealCategoriesResponse
-            = withContext(Dispatchers.IO) {
-        return@withContext retrofitKotlinSerdesWebService.getMealCategories()
-    }
-
     suspend fun getRetrofitGsonMealCategories(): GsonMealCategoriesResponse
             = withContext(Dispatchers.IO) {
         return@withContext retrofitGsonWebService.getMealCategories()
     }
 
+    suspend fun getRetrofitKotlinSerdesMealCategories(): KotlinSerdesMealCategoriesResponse
+            = withContext(Dispatchers.IO) {
+        return@withContext retrofitKotlinSerdesWebService.getMealCategories()
+    }
+
+    suspend fun getKtorKotlinSerdesMealCategories(): KotlinSerdesMealCategoriesResponse
+            = withContext(Dispatchers.IO) {
+        return@withContext ktorKotlinSerdesWebService.getMealCategories()
+    }
 }

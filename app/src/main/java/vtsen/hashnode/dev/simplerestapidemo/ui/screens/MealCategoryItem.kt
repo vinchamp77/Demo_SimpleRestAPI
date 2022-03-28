@@ -28,6 +28,8 @@ fun MealCategoryItem(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
 
+        Divider(thickness = 2.dp)
+
         Text(text = mealCategory.name, style = MaterialTheme.typography.h4)
 
         Image(
@@ -43,8 +45,6 @@ fun MealCategoryItem(
                 .size(150.dp, 150.dp)
                 .clip(MaterialTheme.shapes.medium)
         )
-
-        Divider(thickness = 2.dp)
     }
 }
 

@@ -24,7 +24,6 @@ fun HomeScreen(
 
     ) {
 
-
         item {
             DefaultButton(
                 text = stringResource(R.string.retrofit_moshi),
@@ -34,6 +33,7 @@ fun HomeScreen(
                 },
             )
         }
+
         item {
             DefaultButton(
                 text = stringResource(R.string.retrofit_gson),
@@ -43,11 +43,22 @@ fun HomeScreen(
                 },
             )
         }
+
         item {
             DefaultButton(
                 text = stringResource(R.string.retrofit_kotlin_serdes),
                 onClick = {
                     viewModel.updateMealCategoriesWithRetrofitKotlinSerdes()
+                    navigateToMealCategories()
+                },
+            )
+        }
+
+        item {
+            DefaultButton(
+                text = stringResource(R.string.ktor_kotlin_serdes),
+                onClick = {
+                    viewModel.updateMealCategoriesWithKtorKotlinSerdes()
                     navigateToMealCategories()
                 },
             )

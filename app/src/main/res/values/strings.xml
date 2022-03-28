@@ -3,4 +3,5 @@
     <string name="retrofit_moshi">Retrofit + Moshi</string>
     <string name="retrofit_gson">Retrofit + Gson</string>
     <string name="retrofit_kotlin_serdes">Retrofit + Kotlin Serdes</string>
+    <string name="ktor_kotlin_serdes">Ktor + Kotlin Serdes</string>
 </resources>
