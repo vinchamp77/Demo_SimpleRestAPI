@@ -21,23 +21,51 @@ class MainRepository(
         const val BASE_URL = "https://www.themealdb.com/api/json/v1/1/"
     }
 
-    suspend fun getRetrofitMoshiMealCategories(): MoshiMealCategoriesResponse
+    suspend fun getRetrofitMoshiMealCategories(enableTest: Boolean): MoshiMealCategoriesResponse
         = withContext(Dispatchers.IO) {
+
+        if (enableTest) {
+            repeat(10) {
+                retrofitMoshiWebService.getMealCategories()
+            }
+        }
+
         return@withContext retrofitMoshiWebService.getMealCategories()
     }
 
-    suspend fun getRetrofitGsonMealCategories(): GsonMealCategoriesResponse
+    suspend fun getRetrofitGsonMealCategories(enableTest: Boolean): GsonMealCategoriesResponse
             = withContext(Dispatchers.IO) {
+
+        if (enableTest) {
+            repeat(10) {
+                retrofitGsonWebService.getMealCategories()
+            }
+        }
+
         return@withContext retrofitGsonWebService.getMealCategories()
     }
 
-    suspend fun getRetrofitKotlinSerdesMealCategories(): KotlinSerdesMealCategoriesResponse
+    suspend fun getRetrofitKotlinSerdesMealCategories(enableTest: Boolean): KotlinSerdesMealCategoriesResponse
             = withContext(Dispatchers.IO) {
+
+        if (enableTest) {
+            repeat(10) {
+                retrofitKotlinSerdesWebService.getMealCategories()
+            }
+        }
+
         return@withContext retrofitKotlinSerdesWebService.getMealCategories()
     }
 
-    suspend fun getKtorKotlinSerdesMealCategories(): KotlinSerdesMealCategoriesResponse
+    suspend fun getKtorKotlinSerdesMealCategories(enableTest: Boolean): KotlinSerdesMealCategoriesResponse
             = withContext(Dispatchers.IO) {
+
+        if (enableTest) {
+            repeat(10) {
+                ktorKotlinSerdesWebService.getMealCategories()
+            }
+        }
+
         return@withContext ktorKotlinSerdesWebService.getMealCategories()
     }
 }

@@ -27,6 +27,9 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
     var apiLoadingTime: String? by mutableStateOf(null)
         private set
 
+    var enablePerformanceTest: Boolean by mutableStateOf(false)
+        private set
+
     private val repository = MainRepository(
         RetrofitMoshiMealsWebService(),
         RetrofitGsonMealsWebService(),
@@ -40,7 +43,7 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
             clear()
             mealsCategoryTitleStrId = R.string.retrofit_moshi
 
-            val response = repository.getRetrofitMoshiMealCategories()
+            val response = repository.getRetrofitMoshiMealCategories(enablePerformanceTest)
             mealCategories = response.asMealCategories()
         }
 
@@ -53,7 +56,7 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
             clear()
             mealsCategoryTitleStrId = R.string.retrofit_gson
 
-            val response = repository.getRetrofitGsonMealCategories()
+            val response = repository.getRetrofitGsonMealCategories(enablePerformanceTest)
             mealCategories = response.asMealCategories()
         }
 
@@ -66,7 +69,7 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
             clear()
             mealsCategoryTitleStrId = R.string.retrofit_kotlin_serdes
 
-            val response = repository.getRetrofitKotlinSerdesMealCategories()
+            val response = repository.getRetrofitKotlinSerdesMealCategories(enablePerformanceTest)
             mealCategories = response.asMealCategories()
         }
 
@@ -79,11 +82,15 @@ class MainViewModel(preview: Boolean = false) : ViewModel() {
             clear()
             mealsCategoryTitleStrId = R.string.ktor_kotlin_serdes
 
-            val response = repository.getRetrofitKotlinSerdesMealCategories()
+            val response = repository.getKtorKotlinSerdesMealCategories(enablePerformanceTest)
             mealCategories = response.asMealCategories()
         }
 
         apiLoadingTime = time.toString()
+    }
+
+    fun onEnablePerformanceTestClick(value: Boolean) {
+        enablePerformanceTest = value
     }
 
     private fun clear() {
