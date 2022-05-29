@@ -16,4 +16,4 @@ This app shows multiple HTTP client library implementations and their loading ti
 - Jetpack Compose
 
 ## Articles
-- [Simple REST API Android App in Kotlin - Various HTTP Client Library Implementations]() - TBD
+- [Simple REST API Android App in Kotlin - Various HTTP Client Library Implementations](https://vtsen.hashnode.dev/simple-rest-api-android-app-in-kotlin-various-http-client-library-implementations)
