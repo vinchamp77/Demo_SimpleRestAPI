@@ -12,7 +12,7 @@ This app shows multiple HTTP client library implementations and their loading ti
 - Retrofit + Gson
 - Retrofit + Kotlin Serialization
 - Ktor Client + Kotlin Serialization
-- [MVVM](https://vtsen.hashnode.dev/mvc-vs-mvp-vs-mvvm-design-patterns)
+- MVVM Architecture
 - Jetpack Compose
 
 ## Articles
