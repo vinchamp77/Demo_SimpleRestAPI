@@ -8,12 +8,12 @@ This app shows multiple HTTP client library implementations and their loading ti
 - Android Studio Bumblebee or later
 
 ## Tech Stack
+- Jetpack Compose
 - Retrofit + Moshi
 - Retrofit + Gson
 - Retrofit + Kotlin Serialization
 - Ktor Client + Kotlin Serialization
-- [MVVM](https://vtsen.hashnode.dev/mvc-vs-mvp-vs-mvvm-design-patterns)
-- Jetpack Compose
+- MVVM Architecture
 
 ## Articles
 - [Simple REST API Android App in Kotlin - Various HTTP Client Library Implementations](https://vtsen.hashnode.dev/simple-rest-api-android-app-in-kotlin-various-http-client-library-implementations)
